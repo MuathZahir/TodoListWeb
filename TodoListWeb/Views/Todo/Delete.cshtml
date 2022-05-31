@@ -1,0 +1,29 @@
+﻿@model Todo
+
+<form method="post" asp-action="Delete">
+    <div class="p-4 mt-4 bg-dark">
+        <h2 class="text-light">Delete todo</h2>
+        <hr />
+        <fieldset>
+            <input asp-for="Id" hidden />
+            <div class="form-group">
+             
+                <input type="text" asp-for="Name" class="form-control" class="input-group-text pt-4" style="background-color:lightgrey" disabled>
+            </div>
+            <div class="form-group mt-4 mb-4">
+                <textarea asp-for="Description" class="form-control" rows="3" style="background-color:lightgrey" disabled></textarea>
+            </div>
+            <div class="form-group mb-4">
+                <input type="datetime-local" asp-for="Deadline" class="form-control" style="background-color:lightgrey;" disabled>
+            </div>
+            <button type="submit" class="btn btn-danger me-3" style="width:150px">Delete</button>
+            <a class="btn btn-secondary" style="width:150px" asp-controller="Todo" asp-action="Index">Back</a>
+        </fieldset>
+    </div>
+</form>
+
+@section Scripts{
+@{
+    <partial name="_ValidationScriptsPartial" />
+}
+}
